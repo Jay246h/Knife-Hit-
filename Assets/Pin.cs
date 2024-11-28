@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Pin : MonoBehaviour
 {
@@ -19,6 +20,11 @@ public class Pin : MonoBehaviour
             movement2D.MoveTo(Vector3.zero);
             // 과녁 적중시 과녁에 자식이 되어 같이 회전
             transform.SetParent(collision.transform);
+        }
+        else if (collision.CompareTag("Pin"))
+        {
+            Debug.Log("응 너 다시해");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }
