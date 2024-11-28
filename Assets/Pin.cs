@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class Pin : MonoBehaviour
 {
+    [SerializeField]
+    private Transform hitEffectSpawnPoint;
+    [SerializeField]
+    private GameObject hitEffectPrefab;
     private Movement2D movement2D;
 
     private void Awake()
@@ -20,6 +24,12 @@ public class Pin : MonoBehaviour
             movement2D.MoveTo(Vector3.zero);
             // 과녁 적중시 과녁에 자식이 되어 같이 회전
             transform.SetParent(collision.transform);
+            collision.GetComponent<Target>().Hit();
+
+            Instantiate(hitEffectPrefab, hitEffectSpawnPoint.position, hitEffectSpawnPoint.rotation);
+
+            // 과녁에 배치된 핀은 OnTriggerEnter2D()를 호출하지 않도록 스크립트 삭제
+            Destroy(this);
         }
         else if (collision.CompareTag("Pin"))
         {

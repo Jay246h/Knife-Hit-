@@ -34,6 +34,7 @@ Transform:
   m_Children:
   - {fileID: 1423653448187510625}
   - {fileID: 5795925389100112181}
+  - {fileID: 2858672301753034331}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5226822869615015538
@@ -62,6 +63,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 598f7bc3ff1921d46971360b23183e2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitEffectSpawnPoint: {fileID: 2858672301753034331}
+  hitEffectPrefab: {fileID: 6364053076304698773, guid: ef195c452e47de544a17dfe4cd90c34b, type: 3}
 --- !u!61 &4580163802144440966
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -275,3 +278,34 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &7527557000330787307
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2858672301753034331}
+  m_Layer: 0
+  m_Name: HitEffectSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2858672301753034331
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7527557000330787307}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5159708958108069232}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
