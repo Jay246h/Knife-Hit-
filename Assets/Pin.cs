@@ -28,6 +28,10 @@ public class Pin : MonoBehaviour
 
             Instantiate(hitEffectPrefab, hitEffectSpawnPoint.position, hitEffectSpawnPoint.rotation);
 
+            // 귀찮아서 Camera.main을 썼지만 PinSpawner에서 ShakeCamera 변수를 미리 받아두고,
+            // Pin을 생성할 때 Pin.Setup(shakeCamera); 와 같이 받아와서 쓰면 더 좋다
+            Camera.main.GetComponent<ShakeCamera>().Shake(0.1f, 1);
+
             // 과녁에 배치된 핀은 OnTriggerEnter2D()를 호출하지 않도록 스크립트 삭제
             Destroy(this);
         }
